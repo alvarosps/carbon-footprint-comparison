@@ -3,6 +3,7 @@
 
 - To run client
 ### `cd ./client`
+### `npm install`
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -10,6 +11,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 - To run server
 ### `cd ./server`
+### `npm install`
 ### `npm start`
 
 Runs the server .\
