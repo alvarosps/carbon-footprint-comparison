@@ -1,0 +1,15 @@
+.App {
+  display: flex;
+  flex-direction: row;
+}
+
+.App > div {
+  flex: 1 1 auto;
+  margin: 5px;
+}
+
+@media screen and (max-width: 950px) {
+  .App {
+    flex-direction: column;
+  }
+}
