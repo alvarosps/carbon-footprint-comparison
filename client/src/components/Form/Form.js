@@ -41,7 +41,7 @@ const fuelOptions = [
 
 const Form = ({ getEmissionsData }) => {
     const methods = useForm({ defaultValues: defaultValues });
-    const { handleSubmit, reset, control } = methods;
+    const { handleSubmit, reset, control, formState: { errors } } = methods;
     const onSubmit = async (data) => {
         const response = await axios.get("http://localhost:8000/calculate-emissions", {
             params: data
@@ -60,10 +60,10 @@ const Form = ({ getEmissionsData }) => {
             }}
         >
             <Typography variant="h6">Vehicle Data</Typography>
-            <InputRadio name={"unitSystem"} control={control} label={"Unit System"} options={unitOptions} />
-            <InputText name="distanceWorkHome" control={control} label="Distance Work-Home" />
+            <InputRadio name={"unitSystem"} control={control} label={"Unit System"} options={unitOptions}  />
+            <InputText name="distanceWorkHome" control={control} label="Distance Work-Home (km or miles)" errors={errors} />
             <InputDropdown name="fuelType" control={control} label="Choose your vehicle Fuel type" options={fuelOptions} />
-            <InputText name="vehicleFuelConsumption" control={control} label="Enter your vehicle Fuel Consumption (km/L or miles/gallons)" />
+            <InputText name="vehicleFuelConsumption" control={control} label="Enter your vehicle Fuel Consumption (km/L or miles/gallons)" errors={errors} />
             <Button onClick={handleSubmit(onSubmit)} variant={"contained"}>
                 {" "}
                 Submit{" "}

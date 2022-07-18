@@ -1,8 +1,8 @@
 import React from 'react';
-import { CardContent, Typography } from '@material-ui/core';
+import { Button, CardContent, Typography } from '@material-ui/core';
 import './EmissionsResults.css';
 
-const EmissionsResults = ({ emissionsData }) => {
+const EmissionsResults = ({ emissionsData, buttonOnClick }) => {
     return (
         <div className='emissions-results'>
           <div className='emissions-results-header'>Emissions Results (Annual)</div>
@@ -40,6 +40,7 @@ const EmissionsResults = ({ emissionsData }) => {
               Liters of {emissionsData.carConsumption.fuelType} used
             </Typography>
           </CardContent>
+          <Button variant='outlined' onClick={buttonOnClick}>Learn More!</Button>
         </div>
     )
 }
